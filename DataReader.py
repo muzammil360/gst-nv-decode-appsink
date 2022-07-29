@@ -49,7 +49,10 @@ class DataReader():
         self.thread.join()
 
     def readBuffer(self):
-        return self.output_array
+
+        output = self.output_array
+        self.output_array = None
+        return output
 
 
     def onMessage(self, bus, message):
